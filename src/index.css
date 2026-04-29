@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+@import "@fontsource/space-grotesk";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Inter Variable', sans-serif;
+  --font-headline: 'Space Grotesk', sans-serif;
+
+  --color-background: #131317;
+  --color-foreground: #E4E1E7;
+  
+  --color-primary: #00DAF3;
+  --color-primary-foreground: #00363D;
+  
+  --color-secondary: #BBC6E2;
+  --color-secondary-foreground: #263046;
+  
+  --color-tertiary: #00E639;
+  --color-tertiary-foreground: #003907;
+
+  --color-surface: #131317;
+  --color-surface-container-lowest: #0E0E12;
+  --color-surface-container-low: #1B1B1F;
+  --color-surface-container: #1F1F23;
+  --color-surface-container-high: #2A2A2E;
+  --color-surface-container-highest: #353439;
+
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-input: rgba(255, 255, 255, 0.15);
+  --color-ring: #00DAF3;
+
+  --radius-lg: 0.25rem;
+  --radius-md: 0.125rem;
+  --radius-sm: 0.0625rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+@layer utilities {
+  .tactical-gradient {
+    background: linear-gradient(135deg, #00DAF3 0%, #0090A1 100%);
+  }
+  .glass-panel {
+    background: rgba(53, 52, 57, 0.6);
+    backdrop-filter: blur(20px);
+  }
+}
