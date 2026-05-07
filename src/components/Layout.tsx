@@ -53,7 +53,7 @@ export const Navbar = () => {
             className="tactical-gradient text-primary-foreground font-headline font-bold text-xs uppercase tracking-widest scale-95 active:scale-90 transition-transform"
             asChild
           >
-            <Link to="/request-briefing">Request Demo</Link>
+            <Link to="/contact">Contact</Link>
           </Button>
         </div>
       </div>
@@ -71,9 +71,9 @@ export const Footer = () => {
           </span>
         </div>
         <div className="flex flex-wrap justify-center gap-8">
-          <a href="#" className="text-xs text-slate-500 uppercase tracking-tight hover:text-primary transition-colors opacity-80 hover:opacity-100">Privacy</a>
-          <a href="#" className="text-xs text-slate-500 uppercase tracking-tight hover:text-primary transition-colors opacity-80 hover:opacity-100">Terms</a>
-          <a href="#" className="text-xs text-slate-500 uppercase tracking-tight hover:text-primary transition-colors opacity-80 hover:opacity-100">Contact</a>
+          <Link to="/privacy" className="text-xs text-slate-500 uppercase tracking-tight hover:text-primary transition-colors opacity-80 hover:opacity-100">Privacy</Link>
+          <Link to="/terms" className="text-xs text-slate-500 uppercase tracking-tight hover:text-primary transition-colors opacity-80 hover:opacity-100">Terms</Link>
+          <Link to="/contact" className="text-xs text-slate-500 uppercase tracking-tight hover:text-primary transition-colors opacity-80 hover:opacity-100">Contact</Link>
         </div>
       </div>
     </footer>

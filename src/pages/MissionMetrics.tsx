@@ -61,7 +61,6 @@ const AICopilotMetricsUI = () => {
               <div className="absolute -bottom-1 -left-4 w-3 h-3 bg-primary/30 rounded-full blur-sm animate-bounce"></div>
             </div>
             <div className="text-center">
-              <div className="text-xl font-headline font-bold text-white tracking-tighter">AI CO-PILOT</div>
               <div className="text-[10px] uppercase tracking-[0.3em] text-primary font-bold">Active Document Ingestion</div>
             </div>
           </div>
@@ -246,11 +245,6 @@ const MissionMetrics = () => {
                 </div>
               </div>
             </div>
-            
-            <button className="text-primary font-headline font-bold text-sm tracking-widest uppercase flex items-center gap-3 cursor-pointer group">
-              Ready for Human Review at 0800 HRS
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
-            </button>
           </div>
           
           <AICopilotMetricsUI />

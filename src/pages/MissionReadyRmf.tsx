@@ -29,12 +29,12 @@ const MissionReadyRmf = () => {
             <p className="text-foreground/70 text-lg lg:text-xl max-w-xl leading-relaxed">
               Security engineers shouldn't be buried in paperwork. We automate the RMF lifecycle so your elite talent can focus on high-impact technical security problems instead of manual documentation.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-8">
               <Button 
                 asChild
-                className="tactical-gradient px-8 py-6 rounded-lg font-headline font-bold uppercase tracking-widest text-primary-foreground shadow-lg hover:brightness-110 transition-all h-auto"
+                className="tactical-gradient px-12 py-6 rounded-lg font-headline font-bold uppercase tracking-widest text-primary-foreground shadow-lg hover:brightness-110 transition-all h-auto"
               >
-                <Link to="/request-briefing">Request a Mission Briefing</Link>
+                <Link to="/contact">Reach Out</Link>
               </Button>
               <Button 
                 variant="outline"
@@ -93,7 +93,6 @@ const MissionReadyRmf = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-1">
           <Card className="bg-surface-container-low p-10 hover:bg-surface-container transition-colors group border-none rounded-none">
-            <Wand2 className="text-primary w-8 h-8 mb-8" />
             <h3 className="font-headline text-xl font-bold mb-4 uppercase tracking-tight">Control Narrative Generation</h3>
             <p className="text-foreground/70 leading-relaxed mb-6">
               Dynamically generate technical control descriptions based on your specific architecture. No more copy-pasting from generic templates.
@@ -102,7 +101,6 @@ const MissionReadyRmf = () => {
           </Card>
           
           <Card className="bg-surface-container-low p-10 hover:bg-surface-container transition-colors group border-none rounded-none">
-            <Terminal className="text-primary w-8 h-8 mb-8" />
             <h3 className="font-headline text-xl font-bold mb-4 uppercase tracking-tight">Compliance Artifact Processing</h3>
             <p className="text-foreground/70 leading-relaxed mb-6">
               Ingest outputs from systems like SCAP scans and STIG results. CMSP maps artifacts to specific RMF controls without direct interference.
@@ -111,7 +109,6 @@ const MissionReadyRmf = () => {
           </Card>
 
           <Card className="bg-surface-container-low p-10 hover:bg-surface-container transition-colors group border-none rounded-none">
-            <Zap className="text-primary w-8 h-8 mb-8" />
             <h3 className="font-headline text-xl font-bold mb-4 uppercase tracking-tight">Adaptive POAM Generation</h3>
             <p className="text-foreground/70 leading-relaxed mb-6">
               As vulnerabilities shift, your Plan of Action and Milestones adapts in real-time. Automated tracking of remediation lifecycles.
@@ -215,7 +212,7 @@ const MissionReadyRmf = () => {
               Complete environment control. Deploy on-premises or in air-gapped secure facilities. Your compliance data never leaves your perimeter.
             </p>
             <Button variant="outline" className="w-full border-2 border-primary/20 py-6 rounded-lg font-headline font-bold uppercase tracking-widest hover:border-primary transition-all h-auto">
-              Request a Quote
+                <Link to="/contact">Request a Quote</Link>
             </Button>
           </Card>
 
@@ -228,7 +225,7 @@ const MissionReadyRmf = () => {
               Turnkey compliance management. Leverage our secure cloud infrastructure for rapid deployment and continuous updates with minimal overhead.
             </p>
             <Button className="w-full tactical-gradient py-6 rounded-lg font-headline font-bold uppercase tracking-widest text-primary-foreground hover:shadow-lg transition-all h-auto">
-              Contact for Pricing
+                <Link to="/contact">Contact for Pricing</Link>
             </Button>
           </Card>
         </div>
@@ -274,7 +271,7 @@ const MissionReadyRmf = () => {
           </p>
           <div className="flex justify-center">
             <Button asChild className="tactical-gradient px-10 py-8 rounded-lg font-headline font-bold uppercase tracking-widest text-primary-foreground hover:shadow-lg transition-all h-auto text-lg">
-              <Link to="/request-briefing">Request a Mission Briefing</Link>
+              <Link to="/contact">Request a Mission Briefing</Link>
             </Button>
           </div>
         </div>

@@ -3,7 +3,9 @@ import { Layout } from './components/Layout';
 import MissionReadyRmf from './pages/MissionReadyRmf';
 import ComplianceAssessment from './pages/ComplianceAssessment';
 import MissionMetrics from './pages/MissionMetrics';
-import RequestBriefing from './pages/RequestBriefing';
+import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
           <Route path="/" element={<MissionReadyRmf />} />
           <Route path="/compliance" element={<ComplianceAssessment />} />
           <Route path="/metrics" element={<MissionMetrics />} />
-          <Route path="/request-briefing" element={<RequestBriefing />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </Layout>
     </Router>
