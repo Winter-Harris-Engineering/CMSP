@@ -123,20 +123,20 @@ const ComplianceAssessment = () => {
       <section className="relative px-8 py-20 lg:py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <h1 className="font-headline font-light text-5xl md:text-7xl lg:text-8xl leading-tight tracking-tight">
+            <h1 className="font-headline font-light text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-tight">
               Precision Compliance <br/><span className="text-primary font-bold">Orchestration</span>
             </h1>
             <p className="text-foreground/70 text-lg max-w-xl leading-relaxed">
               Automate the complete RMF lifecycle. From automated document ingestion to structured remediation workflows, CMSP eliminates documentation bottlenecks and enforces mission-critical security standards.
             </p>
-            <div className="flex gap-4">
-              <Button asChild className="tactical-gradient px-8 py-6 rounded-lg text-primary-foreground font-headline font-bold text-sm uppercase tracking-widest flex items-center gap-2 active:scale-95 transition-all shadow-lg shadow-primary/20 h-auto">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild className="tactical-gradient px-4 md:px-8 py-4 md:py-6 rounded-lg text-primary-foreground font-headline font-bold text-xs md:text-sm uppercase tracking-wider md:tracking-widest flex items-center justify-center gap-2 active:scale-95 transition-all shadow-lg shadow-primary/20 h-auto w-full sm:w-auto">
                 <Link to="/contact">
                   Initialize Assessment
                   <Rocket className="w-4 h-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="bg-surface-container-high border-white/10 px-8 py-6 rounded-lg text-foreground font-headline font-bold text-sm uppercase tracking-widest hover:bg-surface-container-highest transition-colors h-auto">
+              <Button asChild variant="outline" className="bg-surface-container-high border-white/10 px-4 md:px-8 py-4 md:py-6 rounded-lg text-foreground font-headline font-bold text-xs md:text-sm uppercase tracking-wider md:tracking-widest hover:bg-surface-container-highest transition-colors h-auto w-full sm:w-auto text-center justify-center">
                 <Link to="/contact">Request Technical Manual</Link>
               </Button>
             </div>
@@ -241,7 +241,7 @@ const ComplianceAssessment = () => {
                 </div>
               ))}
             </div>
-            <Button disabled variant="ghost" className="w-full mt-6 py-6 border border-primary/20 rounded text-xs font-bold uppercase tracking-widest cursor-not-allowed opacity-50 h-auto">
+            <Button disabled variant="ghost" className="w-full mt-6 px-4 py-4 md:py-6 border border-primary/20 rounded text-[10px] md:text-xs font-bold uppercase tracking-wider md:tracking-widest cursor-not-allowed opacity-50 h-auto whitespace-normal break-words">
               Apply Scoping Filter (Illustrative Only)
             </Button>
           </Card>
@@ -320,7 +320,7 @@ const ComplianceAssessment = () => {
                 CMSP dynamically clusters non-compliant controls into prioritized Plans of Action and Milestones, optimizing your remediation workflow.
               </p>
             </div>
-            <Button disabled className="tactical-gradient px-8 py-6 rounded text-primary-foreground font-bold text-xs uppercase tracking-widest opacity-50 cursor-not-allowed h-auto">
+            <Button disabled className="tactical-gradient px-4 md:px-8 py-4 md:py-6 rounded text-primary-foreground font-bold text-xs uppercase tracking-wider md:tracking-widest opacity-50 cursor-not-allowed h-auto w-full md:w-auto justify-center">
               Export POAM.xlsx <Download className="w-4 h-4 ml-2" />
             </Button>
           </div>
@@ -370,10 +370,10 @@ const ComplianceAssessment = () => {
               Transition from static checklists to continuous, automated mission assurance with the Cyber Mission Support Platform.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Button asChild className="tactical-gradient px-12 py-8 rounded-lg text-primary-foreground font-headline font-bold text-sm uppercase tracking-widest shadow-2xl shadow-primary/30 active:scale-95 transition-all h-auto text-lg">
+              <Button asChild className="tactical-gradient px-6 md:px-12 py-4 md:py-8 rounded-lg text-primary-foreground font-headline font-bold text-sm md:text-lg uppercase tracking-wider md:tracking-widest shadow-2xl shadow-primary/30 active:scale-95 transition-all h-auto w-full sm:w-auto text-center justify-center">
                 <Link to="/contact">Start Your Assessment</Link>
               </Button>
-              <Button asChild variant="outline" className="bg-surface-container-highest px-12 py-8 rounded-lg text-foreground font-headline font-bold text-sm uppercase tracking-widest hover:bg-surface-bright transition-all border-white/10 active:scale-95 h-auto text-lg">
+              <Button asChild variant="outline" className="bg-surface-container-highest px-6 md:px-12 py-4 md:py-8 rounded-lg text-foreground font-headline font-bold text-sm md:text-lg uppercase tracking-wider md:tracking-widest hover:bg-surface-bright transition-all border-white/10 active:scale-95 h-auto w-full sm:w-auto text-center justify-center">
                 <Link to="/contact">Request a Demo</Link>
               </Button>
             </div>

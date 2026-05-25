@@ -170,7 +170,7 @@ const MissionMetrics = () => {
           </svg>
         </div>
         <div className="relative z-20 max-w-7xl mx-auto space-y-6">
-          <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none">
+          <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none">
             Compliance Velocity: <br/>
             <span className="font-bold text-primary">From Red to Mission-Ready</span>
           </h1>
@@ -457,7 +457,7 @@ const MissionMetrics = () => {
               Transition from static checklists to continuous, automated mission assurance with high-fidelity visual telemetry.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Button asChild className="tactical-gradient px-12 py-8 rounded-lg text-primary-foreground font-headline font-bold text-sm uppercase tracking-widest shadow-2xl shadow-primary/30 active:scale-95 transition-all h-auto text-lg">
+              <Button asChild className="tactical-gradient px-6 md:px-12 py-4 md:py-8 rounded-lg text-primary-foreground font-headline font-bold text-sm md:text-lg uppercase tracking-wider md:tracking-widest shadow-2xl shadow-primary/30 active:scale-95 transition-all h-auto w-full sm:w-auto text-center justify-center">
                 <Link to="/contact">Request a Mission Briefing</Link>
               </Button>
             </div>

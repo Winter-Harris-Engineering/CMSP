@@ -92,7 +92,7 @@ const Contact = () => {
                   form.reset();
                 }}
                 variant="outline" 
-                className="border-primary/20 hover:border-primary/50 text-xs font-bold uppercase tracking-widest px-8 py-4 mt-4 h-auto"
+                className="border-primary/20 hover:border-primary/50 text-[10px] md:text-xs font-bold uppercase tracking-wider md:tracking-widest px-4 md:px-8 py-3 md:py-4 mt-4 h-auto w-full sm:w-auto text-center justify-center rounded-lg"
               >
                 Submit Another Request
               </Button>
@@ -206,7 +206,7 @@ const Contact = () => {
 
               <Button 
                 type="submit" 
-                className="tactical-gradient w-full py-8 text-primary-foreground font-headline font-bold uppercase tracking-[0.3em] text-xs rounded-none hover:shadow-[0_0_30px_rgba(0,218,243,0.3)] transition-all h-auto"
+                className="tactical-gradient w-full px-4 py-4 md:py-8 text-primary-foreground font-headline font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs rounded-lg hover:shadow-[0_0_30px_rgba(0,218,243,0.3)] transition-all h-auto flex justify-center items-center"
               >
                 Send Message
                 <ChevronRight className="ml-2 w-5 h-5" />

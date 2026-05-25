@@ -16,24 +16,24 @@ const MissionReadyRmf = () => {
       <section className="relative px-8 py-20 lg:py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="z-10 space-y-8">
-            <h1 className="font-headline font-light text-5xl lg:text-7xl leading-tight">
+            <h1 className="font-headline font-light text-4xl sm:text-5xl lg:text-7xl leading-tight">
               Automating the <br/>
               <span className="text-primary font-bold">Risk Management Framework</span>
             </h1>
             <p className="text-foreground/70 text-lg lg:text-xl max-w-xl leading-relaxed">
               Security engineers shouldn't be buried in paperwork. We automate the RMF lifecycle so your security engineers can focus on high-impact technical security engineering instead of manual documentation.
             </p>
-            <div className="flex flex-wrap gap-8">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 asChild
-                className="tactical-gradient px-12 py-6 rounded-lg font-headline font-bold uppercase tracking-widest text-primary-foreground shadow-lg hover:brightness-110 transition-all h-auto"
+                className="tactical-gradient px-4 md:px-12 py-4 md:py-6 rounded-lg font-headline font-bold uppercase tracking-wider md:tracking-widest text-primary-foreground shadow-lg hover:brightness-110 transition-all h-auto w-full sm:w-auto text-center justify-center"
               >
                 <Link to="/contact">Reach Out</Link>
               </Button>
               <Button 
                 asChild
                 variant="outline"
-                className="bg-surface-container-high border-l-2 border-primary px-8 py-6 rounded-lg font-headline font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors h-auto border-y-0 border-r-0"
+                className="bg-surface-container-high border-l-2 border-primary px-4 md:px-8 py-4 md:py-6 rounded-lg font-headline font-bold text-xs md:text-sm uppercase tracking-wider md:tracking-widest hover:bg-surface-container-highest transition-colors h-auto border-y-0 border-r-0 w-full sm:w-auto text-center justify-center"
               >
                 <Link to="/contact">Deploy Local Instance</Link>
               </Button>
@@ -249,7 +249,7 @@ const MissionReadyRmf = () => {
             <p className="text-foreground/70 mb-8 flex-grow leading-relaxed">
               Complete environment control. Deploy on-premises or in air-gapped secure facilities. Your compliance data never leaves your perimeter.
             </p>
-            <Button variant="outline" className="w-full border-2 border-primary/20 py-6 rounded-lg font-headline font-bold uppercase tracking-widest hover:border-primary transition-all h-auto">
+            <Button asChild variant="outline" className="w-full border-2 border-primary/20 px-4 py-4 md:py-6 rounded-lg font-headline font-bold uppercase tracking-wider md:tracking-widest hover:border-primary transition-all h-auto justify-center">
                 <Link to="/contact">Request a Quote</Link>
             </Button>
           </Card>
@@ -262,7 +262,7 @@ const MissionReadyRmf = () => {
             <p className="text-foreground/70 mb-8 flex-grow leading-relaxed">
               Turnkey compliance management. Leverage our secure cloud infrastructure for rapid deployment and continuous updates with minimal overhead.
             </p>
-            <Button className="w-full tactical-gradient py-6 rounded-lg font-headline font-bold uppercase tracking-widest text-primary-foreground hover:shadow-lg transition-all h-auto">
+            <Button asChild className="w-full tactical-gradient px-4 py-4 md:py-6 rounded-lg font-headline font-bold uppercase tracking-wider md:tracking-widest text-primary-foreground hover:shadow-lg transition-all h-auto justify-center">
                 <Link to="/contact">Contact for Pricing</Link>
             </Button>
           </Card>
@@ -308,7 +308,7 @@ const MissionReadyRmf = () => {
             Join the cybersecurity engineering teams using CMSP to maintain continuous compliance without the documentation fatigue.
           </p>
           <div className="flex justify-center">
-            <Button asChild className="tactical-gradient px-10 py-8 rounded-lg font-headline font-bold uppercase tracking-widest text-primary-foreground hover:shadow-lg transition-all h-auto text-lg">
+            <Button asChild className="tactical-gradient px-6 md:px-12 py-4 md:py-8 rounded-lg font-headline font-bold text-sm md:text-lg uppercase tracking-wider md:tracking-widest text-primary-foreground hover:shadow-lg transition-all h-auto w-full sm:w-auto text-center justify-center">
               <Link to="/contact">Request a Mission Briefing</Link>
             </Button>
           </div>
