@@ -449,10 +449,10 @@ const MissionMetrics = () => {
 
       {/* CTA Section - Shared with previous pages for consistency */}
       <section className="px-8 py-32 max-w-7xl mx-auto">
-        <div className="relative overflow-hidden rounded-lg p-20 text-center border border-white/5">
+        <div className="relative overflow-hidden rounded-lg p-8 md:p-20 text-center border border-white/5">
           <div className="absolute inset-0 tactical-gradient opacity-10"></div>
           <div className="relative z-10 space-y-10">
-            <h2 className="font-headline text-5xl font-light">Deploy Mission-Ready Metrics</h2>
+            <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-light">Deploy Mission-Ready Metrics</h2>
             <p className="text-foreground/70 max-w-2xl mx-auto text-xl leading-relaxed">
               Transition from static checklists to continuous, automated mission assurance with high-fidelity visual telemetry.
             </p>

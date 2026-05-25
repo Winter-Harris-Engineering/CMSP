@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import MissionReadyRmf from './pages/MissionReadyRmf';
 import ComplianceAssessment from './pages/ComplianceAssessment';
 import MissionMetrics from './pages/MissionMetrics';
@@ -10,6 +11,7 @@ import Terms from './pages/Terms';
 function App() {
   return (
     <Router basename={import.meta.env.BASE_URL}>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<MissionReadyRmf />} />
