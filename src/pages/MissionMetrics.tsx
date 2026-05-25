@@ -150,9 +150,9 @@ const MissionMetrics = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="space-y-24 pb-24">
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center px-8 lg:px-16 overflow-hidden">
+      <section className="relative py-20 lg:py-32 px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div>
           <svg className="absolute inset-0 w-full h-full opacity-20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,8 +169,8 @@ const MissionMetrics = () => {
             <circle cx="300" cy="150" r="150" stroke="rgba(0, 218, 243, 0.03)" strokeWidth="1" strokeDasharray="3 6"/>
           </svg>
         </div>
-        <div className="relative z-20 max-w-4xl space-y-6">
-          <h1 className="font-headline text-6xl lg:text-8xl font-light tracking-tight leading-none">
+        <div className="relative z-20 max-w-7xl mx-auto space-y-6">
+          <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none">
             Compliance Velocity: <br/>
             <span className="font-bold text-primary">From Red to Mission-Ready</span>
           </h1>
@@ -181,10 +181,10 @@ const MissionMetrics = () => {
       </section>
 
       {/* Bento Impact Metrics */}
-      <section className="px-8 lg:px-16 py-24">
+      <section className="px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Speed Card */}
-          <Card className="md:col-span-2 bg-surface-container-low border-none border-l-4 border-primary p-12 rounded-none space-y-8">
+          <Card className="md:col-span-2 bg-surface-container-low border-none border-l-4 border-primary p-12 rounded-lg space-y-8">
             <div className="flex justify-between items-start">
               <Gauge className="text-primary w-12 h-12" />
               <Badge variant="outline" className="border-primary/30 text-primary font-headline font-bold uppercase tracking-widest px-3 py-1">Velocity Alpha</Badge>
@@ -199,7 +199,7 @@ const MissionMetrics = () => {
           </Card>
 
           {/* Shift Card */}
-          <Card className="bg-surface-container-low border-none p-12 rounded-none flex flex-col justify-between">
+          <Card className="bg-surface-container-low border-none p-12 rounded-lg flex flex-col justify-between">
             <div className="space-y-1">
               <div className="text-xs font-bold uppercase tracking-widest text-error">Pre-Analysis</div>
               <div className="text-5xl font-headline font-bold text-white tracking-tighter">73%</div>
@@ -216,7 +216,7 @@ const MissionMetrics = () => {
       </section>
 
       {/* Feature Section: BOE Analysis */}
-      <section className="px-8 lg:px-16 py-32 bg-surface-container-lowest">
+      <section className="px-8 py-32 bg-surface-container-lowest">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div className="space-y-10">
             <h2 className="font-headline text-5xl font-bold leading-tight">
@@ -253,213 +253,216 @@ const MissionMetrics = () => {
       </section>
 
       {/* Visual Comparison Section */}
-      <section className="px-8 lg:px-16 py-32">
-        <div className="text-center mb-24 space-y-4">
-          <h2 className="font-headline text-5xl font-bold">Postural Transformation Sequence</h2>
-          <div className="h-1 w-32 bg-primary mx-auto"></div>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-24">
-          {/* Day 1 Dashboard */}
-          <Card className="bg-surface-container-low border-none p-10 space-y-10 rounded-none relative overflow-hidden">
-            <h3 className="font-headline text-3xl font-bold flex items-center gap-4">
-              <span className="w-4 h-4 bg-error rounded-full animate-pulse"></span>
-              Initial Posture (Day 1)
-            </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="h-[250px] relative w-full min-w-0">
-                <ChartContainer config={chartConfig} className="h-full w-full">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <ChartTooltip 
-                        content={<ChartTooltipContent hideLabel />} 
-                        cursor={false}
-                      />
-                      <Pie
-                        data={initialPostureData}
-                        innerRadius={80}
-                        outerRadius={100}
-                        paddingAngle={5}
-                        dataKey="value"
-                        stroke="none"
-                      >
-                        {initialPostureData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.fill} />
-                        ))}
-                      </Pie>
-                    </PieChart>
-                  </ResponsiveContainer>
-                </ChartContainer>
-                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                  <span className="text-4xl font-headline font-bold text-error">27%</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Secure</span>
+      <section className="px-8 py-32">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-24 space-y-4">
+            <h2 className="font-headline text-4xl lg:text-5xl font-bold">Postural Transformation Sequence</h2>
+            <div className="h-1 w-32 bg-primary mx-auto"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-24">
+            {/* Day 1 Dashboard */}
+            <Card className="bg-surface-container-low border-none p-10 space-y-10 rounded-lg relative overflow-hidden">
+              <h3 className="font-headline text-3xl font-bold flex items-center gap-4">
+                <span className="w-4 h-4 bg-error rounded-full animate-pulse"></span>
+                Initial Posture (Day 1)
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="h-[250px] relative w-full min-w-0">
+                  <ChartContainer config={chartConfig} className="h-full w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <PieChart>
+                        <ChartTooltip 
+                          content={<ChartTooltipContent hideLabel />} 
+                          cursor={false}
+                        />
+                        <Pie
+                          data={initialPostureData}
+                          innerRadius={80}
+                          outerRadius={100}
+                          paddingAngle={5}
+                          dataKey="value"
+                          stroke="none"
+                        >
+                          {initialPostureData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={entry.fill} />
+                          ))}
+                        </Pie>
+                      </PieChart>
+                    </ResponsiveContainer>
+                  </ChartContainer>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                    <span className="text-4xl font-headline font-bold text-error">27%</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Secure</span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  {initialPostureData.map((item) => (
+                    <div key={item.name} className="flex justify-between items-center px-6 py-4 bg-surface rounded border border-white/5 transition-all hover:bg-surface-container-highest">
+                      <span className="text-xs uppercase tracking-widest font-bold text-slate-400">{item.name}</span>
+                      <span className={`font-headline font-bold text-lg ${item.name === 'Secure' ? 'text-tertiary' : 'text-error'}`}>{item.value}%</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-              
-              <div className="space-y-4">
-                {initialPostureData.map((item) => (
-                  <div key={item.name} className="flex justify-between items-center px-6 py-4 bg-surface rounded border border-white/5 transition-all hover:bg-surface-container-highest">
-                    <span className="text-xs uppercase tracking-widest font-bold text-slate-400">{item.name}</span>
-                    <span className={`font-headline font-bold text-lg ${item.name === 'Secure' ? 'text-tertiary' : 'text-error'}`}>{item.value}%</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="absolute top-0 right-0 w-32 h-32 bg-error/5 blur-3xl rounded-full"></div>
-          </Card>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-error/5 blur-3xl rounded-full"></div>
+            </Card>
 
-          {/* Day 7 Dashboard */}
-          <Card className="bg-surface-container-low border-none p-10 space-y-10 rounded-none relative overflow-hidden">
-            <h3 className="font-headline text-3xl font-bold flex items-center gap-4">
-              <span className="w-4 h-4 bg-tertiary rounded-full shadow-[0_0_15px_rgba(0,230,57,0.3)]"></span>
-              Post-Remediation (Day 7)
-            </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="h-[250px] relative w-full min-w-0">
-                <ChartContainer config={chartConfig} className="h-full w-full">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <ChartTooltip 
-                        content={<ChartTooltipContent hideLabel />} 
-                        cursor={false}
-                      />
-                      <Pie
-                        data={remediationData}
-                        innerRadius={80}
-                        outerRadius={100}
-                        paddingAngle={5}
-                        dataKey="value"
-                        stroke="none"
-                      >
-                        {remediationData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.fill} />
-                        ))}
-                      </Pie>
-                    </PieChart>
-                  </ResponsiveContainer>
-                </ChartContainer>
-                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                  <span className="text-4xl font-headline font-bold text-tertiary">90%</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Secure</span>
+            {/* Day 7 Dashboard */}
+            <Card className="bg-surface-container-low border-none p-10 space-y-10 rounded-lg relative overflow-hidden">
+              <h3 className="font-headline text-3xl font-bold flex items-center gap-4">
+                <span className="w-4 h-4 bg-tertiary rounded-full shadow-[0_0_15px_rgba(0,230,57,0.3)]"></span>
+                Post-Remediation (Day 7)
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="h-[250px] relative w-full min-w-0">
+                  <ChartContainer config={chartConfig} className="h-full w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <PieChart>
+                        <ChartTooltip 
+                          content={<ChartTooltipContent hideLabel />} 
+                          cursor={false}
+                        />
+                        <Pie
+                          data={remediationData}
+                          innerRadius={80}
+                          outerRadius={100}
+                          paddingAngle={5}
+                          dataKey="value"
+                          stroke="none"
+                        >
+                          {remediationData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={entry.fill} />
+                          ))}
+                        </Pie>
+                      </PieChart>
+                    </ResponsiveContainer>
+                  </ChartContainer>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                    <span className="text-4xl font-headline font-bold text-tertiary">90%</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Secure</span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  {remediationData.map((item) => (
+                    <div key={item.name} className="flex justify-between items-center px-6 py-4 bg-surface rounded border border-white/5 transition-all hover:bg-surface-container-highest">
+                      <span className="text-xs uppercase tracking-widest font-bold text-slate-400">{item.name}</span>
+                      <span className={`font-headline font-bold text-lg ${item.name === 'Secure' ? 'text-tertiary' : 'text-error'}`}>{item.value}%</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-              
-              <div className="space-y-4">
-                {remediationData.map((item) => (
-                  <div key={item.name} className="flex justify-between items-center px-6 py-4 bg-surface rounded border border-white/5 transition-all hover:bg-surface-container-highest">
-                    <span className="text-xs uppercase tracking-widest font-bold text-slate-400">{item.name}</span>
-                    <span className={`font-headline font-bold text-lg ${item.name === 'Secure' ? 'text-tertiary' : 'text-error'}`}>{item.value}%</span>
-                  </div>
-                ))}
-              </div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 blur-3xl rounded-full"></div>
+            </Card>
+          </div>
+
+          {/* Velocity Area Chart */}
+          <Card className="bg-surface-container-lowest border-white/5 p-10 rounded-lg">
+            <div className="flex justify-between items-center mb-10">
+               <div className="space-y-1">
+                  <h4 className="font-headline text-2xl font-bold">Mission Velocity Stream</h4>
+                  <p className="text-xs text-slate-500 uppercase tracking-widest">Postural shift across remediation cycle</p>
+               </div>
+               <History className="text-primary w-6 h-6" />
             </div>
-            <div className="absolute top-0 right-0 w-32 h-32 bg-tertiary/5 blur-3xl rounded-full"></div>
+            
+            <div className="h-[350px] w-full min-w-0">
+              <ChartContainer config={chartConfig} className="h-full w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={velocityData}>
+                    <defs>
+                      <linearGradient id="colorSecure" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#00DAF3" stopOpacity={0.3}/>
+                        <stop offset="95%" stopColor="#00DAF3" stopOpacity={0}/>
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#ffffff05" vertical={false} />
+                    <XAxis 
+                      dataKey="day" 
+                      stroke="#8e9196" 
+                      fontSize={10} 
+                      tickLine={false} 
+                      axisLine={false} 
+                      dy={10}
+                    />
+                    <YAxis 
+                      stroke="#8e9196" 
+                      fontSize={10} 
+                      tickLine={false} 
+                      axisLine={false} 
+                      tickFormatter={(value) => `${value}%`}
+                    />
+                    <ChartTooltip content={<ChartTooltipContent />} />
+                    <Area 
+                      type="monotone" 
+                      dataKey="secure" 
+                      stroke="#00DAF3" 
+                      strokeWidth={2}
+                      fillOpacity={1} 
+                      fill="url(#colorSecure)" 
+                      animationDuration={2000}
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </ChartContainer>
+            </div>
           </Card>
         </div>
-
-         {/* Velocity Area Chart */}
-         <Card className="bg-surface-container-lowest border-white/5 p-10 rounded-lg">
-           <div className="flex justify-between items-center mb-10">
-              <div className="space-y-1">
-                 <h4 className="font-headline text-2xl font-bold">Mission Velocity Stream</h4>
-                 <p className="text-xs text-slate-500 uppercase tracking-widest">Postural shift across remediation cycle</p>
-              </div>
-              <History className="text-primary w-6 h-6" />
-           </div>
-           
-           <div className="h-[350px] w-full min-w-0">
-             <ChartContainer config={chartConfig} className="h-full w-full">
-               <ResponsiveContainer width="100%" height="100%">
-                 <AreaChart data={velocityData}>
-                   <defs>
-                     <linearGradient id="colorSecure" x1="0" y1="0" x2="0" y2="1">
-                       <stop offset="5%" stopColor="#00DAF3" stopOpacity={0.3}/>
-                       <stop offset="95%" stopColor="#00DAF3" stopOpacity={0}/>
-                     </linearGradient>
-                   </defs>
-                   <CartesianGrid strokeDasharray="3 3" stroke="#ffffff05" vertical={false} />
-                   <XAxis 
-                     dataKey="day" 
-                     stroke="#8e9196" 
-                     fontSize={10} 
-                     tickLine={false} 
-                     axisLine={false} 
-                     dy={10}
-                   />
-                   <YAxis 
-                     stroke="#8e9196" 
-                     fontSize={10} 
-                     tickLine={false} 
-                     axisLine={false} 
-                     tickFormatter={(value) => `${value}%`}
-                   />
-                   <ChartTooltip content={<ChartTooltipContent />} />
-                   <Area 
-                     type="monotone" 
-                     dataKey="secure" 
-                     stroke="#00DAF3" 
-                     strokeWidth={2}
-                     fillOpacity={1} 
-                     fill="url(#colorSecure)" 
-                     animationDuration={2000}
-                   />
-                 </AreaChart>
-               </ResponsiveContainer>
-             </ChartContainer>
-           </div>
-        </Card>
       </section>
 
-       {/* Final Impact Section */}
-       <section className="px-8 lg:px-16 py-32 bg-surface-container-low">
-         <div className="max-w-6xl mx-auto">
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-             <div className="space-y-4">
-               <div className="text-6xl font-headline font-bold text-primary tracking-tighter">7 Days</div>
-               <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-slate-400">Rapid System Improvement</div>
-               <p className="text-sm text-foreground/60 leading-relaxed px-4">
-                 Accelerated Compliance Velocity achieving target postural shifts in a single 168-hour mission cycle.
-               </p>
-             </div>
-             
-             <div className="relative space-y-4">
-               <div className="hidden md:block absolute -left-8 top-1/2 -translate-y-1/2 h-20 border-l border-white/10"></div>
-               <div className="text-6xl font-headline font-bold text-primary tracking-tighter">12k+</div>
-               <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-slate-400">Documents Parsed</div>
-               <p className="text-sm text-foreground/60 leading-relaxed px-4">
-                 The full Body of Evidence processed with zero manual entry required.
-               </p>
-               <div className="hidden md:block absolute -right-8 top-1/2 -translate-y-1/2 h-20 border-l border-white/10"></div>
-             </div>
-             
-             <div className="space-y-4">
-               <div className="text-6xl font-headline font-bold text-primary tracking-tighter">99.8%</div>
-               <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-slate-400">Standardized Logic Precision</div>
-               <p className="text-sm text-foreground/60 leading-relaxed px-4">
-                 Automated logic checks eliminate reviewer fatigue and subjective compliance drift.
-               </p>
-             </div>
-           </div>
-         </div>
-       </section>
+      {/* Final Impact Section */}
+      <section className="px-8 py-32 bg-surface-container-low">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+            <div className="space-y-4">
+              <div className="text-6xl font-headline font-bold text-primary tracking-tighter">7 Days</div>
+              <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-slate-400">Rapid System Improvement</div>
+              <p className="text-sm text-foreground/60 leading-relaxed px-4">
+                Accelerated Compliance Velocity achieving target postural shifts in a single 168-hour mission cycle.
+              </p>
+            </div>
+            
+            <div className="relative space-y-4">
+              <div className="hidden md:block absolute -left-8 top-1/2 -translate-y-1/2 h-20 border-l border-white/10"></div>
+              <div className="text-6xl font-headline font-bold text-primary tracking-tighter">12k+</div>
+              <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-slate-400">Documents Parsed</div>
+              <p className="text-sm text-foreground/60 leading-relaxed px-4">
+                The full Body of Evidence processed with zero manual entry required.
+              </p>
+              <div className="hidden md:block absolute -right-8 top-1/2 -translate-y-1/2 h-20 border-l border-white/10"></div>
+            </div>
+            
+            <div className="space-y-4">
+              <div className="text-6xl font-headline font-bold text-primary tracking-tighter">99.8%</div>
+              <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-slate-400">Standardized Logic Precision</div>
+              <p className="text-sm text-foreground/60 leading-relaxed px-4">
+                Automated logic checks eliminate reviewer fatigue and subjective compliance drift.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section - Shared with previous pages for consistency */}
-       <section className="px-8 lg:px-16 py-32">
-         <div className="relative overflow-hidden rounded-lg p-20 text-center border border-white/5">
-           <div className="absolute inset-0 tactical-gradient opacity-10"></div>
-           <div className="relative z-10 space-y-10">
-             <h2 className="font-headline text-5xl font-light">Deploy Mission-Ready Metrics</h2>
-             <p className="text-foreground/70 max-w-2xl mx-auto text-xl leading-relaxed">
-               Transition from static checklists to continuous, automated mission assurance with high-fidelity visual telemetry.
-             </p>
-             <div className="flex flex-col sm:flex-row justify-center gap-6">
-               <Button asChild className="tactical-gradient px-12 py-8 rounded-lg text-primary-foreground font-headline font-bold text-sm uppercase tracking-widest shadow-2xl shadow-primary/30 active:scale-95 transition-all h-auto text-lg">
-                 <Link to="/contact">Request a Mission Briefing</Link>
-               </Button>
-             </div>
-           </div><div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+      <section className="px-8 py-32 max-w-7xl mx-auto">
+        <div className="relative overflow-hidden rounded-lg p-20 text-center border border-white/5">
+          <div className="absolute inset-0 tactical-gradient opacity-10"></div>
+          <div className="relative z-10 space-y-10">
+            <h2 className="font-headline text-5xl font-light">Deploy Mission-Ready Metrics</h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto text-xl leading-relaxed">
+              Transition from static checklists to continuous, automated mission assurance with high-fidelity visual telemetry.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <Button asChild className="tactical-gradient px-12 py-8 rounded-lg text-primary-foreground font-headline font-bold text-sm uppercase tracking-widest shadow-2xl shadow-primary/30 active:scale-95 transition-all h-auto text-lg">
+                <Link to="/contact">Request a Mission Briefing</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-tertiary/5 blur-[120px] rounded-full"></div>
         </div>
       </section>
