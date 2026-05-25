@@ -120,10 +120,10 @@ const ComplianceAssessment = () => {
   return (
     <div className="space-y-24 pb-24">
       {/* Hero Section */}
-      <section className="px-8 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section className="relative px-8 py-20 lg:py-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <h1 className="font-headline font-light text-6xl leading-tight tracking-tight">
+            <h1 className="font-headline font-light text-5xl md:text-7xl lg:text-8xl leading-tight tracking-tight">
               Precision Compliance <br/><span className="text-primary font-bold">Orchestration</span>
             </h1>
             <p className="text-foreground/70 text-lg max-w-xl leading-relaxed">
@@ -200,7 +200,7 @@ const ComplianceAssessment = () => {
       </section>
 
       {/* Assessment Control */}
-      <section className="px-8 max-w-7xl mx-auto">
+      <section className="px-8 py-24 max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <h2 className="font-headline font-light text-4xl">Assessment Scoping & Execution</h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">
@@ -361,25 +361,25 @@ const ComplianceAssessment = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="px-8 max-w-7xl mx-auto pb-12">
-        <div className="relative overflow-hidden rounded-lg p-16 text-center border border-white/5">
+      <section className="px-8 py-32 max-w-7xl mx-auto">
+        <div className="relative overflow-hidden rounded-lg p-20 text-center border border-white/5">
           <div className="absolute inset-0 tactical-gradient opacity-10"></div>
-          <div className="relative z-10 space-y-8">
-            <h2 className="font-headline font-light text-5xl">Ready for Zero-Trust Compliance?</h2>
-            <p className="text-foreground/70 max-w-2xl mx-auto text-lg leading-relaxed">
+          <div className="relative z-10 space-y-10">
+            <h2 className="font-headline text-5xl font-light">Ready for Zero-Trust Compliance?</h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto text-xl leading-relaxed">
               Transition from static checklists to continuous, automated mission assurance with the Cyber Mission Support Platform.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button asChild className="tactical-gradient px-10 py-6 rounded-lg text-primary-foreground font-bold text-sm uppercase tracking-widest shadow-xl shadow-primary/30 active:scale-95 transition-transform h-auto">
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <Button asChild className="tactical-gradient px-12 py-8 rounded-lg text-primary-foreground font-headline font-bold text-sm uppercase tracking-widest shadow-2xl shadow-primary/30 active:scale-95 transition-all h-auto text-lg">
                 <Link to="/contact">Start Your Assessment</Link>
               </Button>
-              <Button asChild variant="outline" className="bg-surface-container-highest px-10 py-6 rounded-lg text-foreground font-bold text-sm uppercase tracking-widest hover:bg-surface-bright transition-colors border-white/10 active:scale-95 transition-transform h-auto">
+              <Button asChild variant="outline" className="bg-surface-container-highest px-12 py-8 rounded-lg text-foreground font-headline font-bold text-sm uppercase tracking-widest hover:bg-surface-bright transition-all border-white/10 active:scale-95 h-auto text-lg">
                 <Link to="/contact">Request a Demo</Link>
               </Button>
             </div>
           </div>
-          <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/20 blur-[80px] rounded-full"></div>
-          <div className="absolute -top-24 -right-24 w-64 h-64 bg-tertiary/10 blur-[80px] rounded-full"></div>
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-tertiary/5 blur-[120px] rounded-full"></div>
         </div>
       </section>
     </div>
