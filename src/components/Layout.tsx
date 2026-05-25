@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import cmspLogo from '@/assets/cmsp-logo-lg.svg';
 
 export const Navbar = () => {
   return (
@@ -10,7 +11,7 @@ export const Navbar = () => {
           <img 
             alt="CMSP Logo" 
             className="w-8 h-8" 
-            src="/cmsp-logo-lg.svg" 
+            src={cmspLogo} 
           />
           <span className="text-2xl font-light tracking-tighter text-primary font-headline">CMSP</span>
         </Link>
