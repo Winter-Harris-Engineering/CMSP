@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -22,16 +22,9 @@ import {
 } from '@/components/ui/select';
 import { Card } from '@/components/ui/card';
 import { 
-  ShieldCheck, 
-  Lock, 
-  Server, 
   ChevronRight, 
-  Verified, 
   Database, 
   CheckCircle2, 
-  Cpu, 
-  Terminal,
-  Zap,
   User,
   Mail,
   Building2,
@@ -48,6 +41,7 @@ const formSchema = z.object({
 });
 
 const Contact = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -61,7 +55,7 @@ const Contact = () => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    alert("Protocol Initialized. Tactical specialists will reach out shortly.");
+    setIsSubmitted(true);
   }
 
   return (
@@ -69,10 +63,10 @@ const Contact = () => {
       {/* Hero Header */}
       <header className="px-8 max-w-7xl mx-auto pt-12 mb-16 space-y-6">
         <h1 className="font-headline font-light text-5xl md:text-7xl tracking-tight leading-tight">
-          Contact <span className="text-primary font-bold italic">Tactical Support</span>
+          Contact <span className="text-primary font-bold italic">Technical Operations</span>
         </h1>
         <p className="text-foreground/70 text-xl max-w-3xl leading-relaxed">
-          Secure your personalized deep dive into the RMF automation platform. Our tactical specialists will reach out within 24 hours to coordinate a technical demonstration tailored to your agency's compliance requirements.
+          Secure your personalized deep dive into the RMF automation platform. Our engineering team will reach out within 24 hours to coordinate a technical demonstration tailored to your agency's compliance requirements.
         </p>
       </header>
 
@@ -81,9 +75,32 @@ const Contact = () => {
         <Card className="lg:col-span-7 bg-surface-container-low border-white/5 p-8 md:p-12 relative overflow-hidden rounded-none">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
           
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-10 relative z-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {isSubmitted ? (
+            <div className="relative z-10 flex flex-col items-center justify-center text-center py-16 space-y-6">
+              <div className="w-16 h-16 rounded-full bg-tertiary/10 border border-tertiary/30 flex items-center justify-center">
+                <CheckCircle2 className="text-tertiary w-8 h-8" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="font-headline text-2xl font-bold text-white uppercase tracking-wider">Inquiry Received</h3>
+                <p className="text-foreground/70 max-w-md leading-relaxed text-sm">
+                  A technical operations representative will contact you within 24 hours to schedule your deep dive platform briefing.
+                </p>
+              </div>
+              <Button 
+                onClick={() => {
+                  setIsSubmitted(false);
+                  form.reset();
+                }}
+                variant="outline" 
+                className="border-primary/20 hover:border-primary/50 text-xs font-bold uppercase tracking-widest px-8 py-4 mt-4 h-auto"
+              >
+                Submit Another Request
+              </Button>
+            </div>
+          ) : (
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-10 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <FormField
                   control={form.control}
                   name="fullName"
@@ -196,6 +213,7 @@ const Contact = () => {
               </Button>
             </form>
           </Form>
+          )}
         </Card>
 
         {/* Sidebar Intelligence */}
@@ -231,16 +249,46 @@ const Contact = () => {
           </Card>
 
           {/* Security Visual */}
-          <div className="relative h-64 rounded-none overflow-hidden group border border-white/5">
-            <img 
-              alt="Cyber security command center visualization" 
-              className="w-full h-full object-cover grayscale opacity-30 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXwkiFpT4wXN9qA_8ldtruL63Cy3d5XRuCfskkX6o_WPMR9DPqObZI25xYwyF7nkqldSl1uOilffzViypFx6QiUy2jLjE0pwEO_QHR3xvY_lUbG_zyG83FRMpFZrHvHXNhkXCa8Ic2_NH3UzQSDMbkdWwVW5d7fC_V_NBFi-Z8ySuNMIkPfqY__2thdEv9giTDRa3qzKRkcX3IUl7j4oCQNEHpHFqQyQQ4R7GjeT4vNRNCaye4ci3UW-b1S-y9ExMVJgeo30wE5Osl" 
-            />
+          <div className="relative h-64 rounded-none overflow-hidden group border border-white/5 flex items-center justify-center bg-surface-container-lowest">
+            <svg className="absolute inset-0 w-full h-full opacity-35 group-hover:opacity-55 transition-opacity duration-1000" viewBox="0 0 350 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid-contact" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <path d="M 16 0 L 0 0 0 16" fill="none" stroke="rgba(0, 218, 243, 0.04)" strokeWidth="0.8"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid-contact)" />
+              
+              <rect x="60" y="30" width="230" height="150" rx="4" stroke="#00DAF3" strokeWidth="1.5" strokeDasharray="6 4" />
+              
+              <g transform="translate(175, 105)">
+                <rect x="-50" y="-35" width="100" height="70" rx="3" fill="#1B1B1F" stroke="#00E639" strokeWidth="2" />
+                <text textAnchor="middle" y="-15" fill="#00E639" fontSize="8" fontFamily="monospace" fontWeight="bold">SOVEREIGN CORE</text>
+                <line x1="-35" y1="5" x2="35" y2="5" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="2" />
+                <line x1="-35" y1="15" x2="35" y2="15" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="2" />
+                <circle cx="-30" cy="-2" r="2" fill="#00E639" />
+                <circle cx="-20" cy="-2" r="2" fill="#00E639" />
+                <circle cx="-30" cy="11" r="2" fill="#00E639" />
+                <circle cx="-20" cy="11" r="2" fill="#00E639" />
+              </g>
+              
+              <circle cx="60" cy="30" r="5" fill="#131317" stroke="#00DAF3" strokeWidth="1.5" />
+              <circle cx="290" cy="30" r="5" fill="#131317" stroke="#00DAF3" strokeWidth="1.5" />
+              <circle cx="60" cy="180" r="5" fill="#131317" stroke="#00DAF3" strokeWidth="1.5" />
+              <circle cx="290" cy="180" r="5" fill="#131317" stroke="#00DAF3" strokeWidth="1.5" />
+              
+              <path d="M 20,110 L 50,110" stroke="#FF453A" strokeWidth="1.5" strokeDasharray="3 3" />
+              <path d="M 50,105 L 55,110 L 50,115 Z" fill="#FF453A" />
+              <circle cx="15" cy="110" r="3" fill="#FF453A" />
+              
+              <g transform="translate(165, 125) scale(0.6)">
+                <rect x="2" y="5" width="12" height="9" rx="1" fill="#00E639" />
+                <path d="M 4,5 L 4,3 C 4,1.5 5.5,1 8,1 C 10.5,1 12,1.5 12,3 L 12,5" stroke="#00E639" strokeWidth="1.5" fill="none" />
+              </g>
+            </svg>
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
             <div className="absolute bottom-6 left-6 space-y-1">
-              <p className="font-headline text-xs text-primary font-bold uppercase tracking-widest">Global Security Operations</p>
-              <p className="text-[10px] text-slate-500 font-mono">Tactical Situational Awareness Engine</p>
+              <p className="font-headline text-xs text-primary font-bold uppercase tracking-widest">Sovereign Boundary Architecture</p>
+              <p className="text-[10px] text-slate-500 font-mono">Isolated Safe Storage & Local Ingestion Core</p>
             </div>
           </div>
         </aside>

@@ -1,6 +1,5 @@
-import React from 'react';
 import { Card } from '@/components/ui/card';
-import { Gavel, CheckCircle, AlertTriangle, Scale } from 'lucide-react';
+import { CheckCircle, AlertTriangle, Scale } from 'lucide-react';
 
 const Terms = () => {
   return (

@@ -1,6 +1,5 @@
-import React from 'react';
 import { Card } from '@/components/ui/card';
-import { Shield, Lock, Eye, FileText } from 'lucide-react';
+import { Lock, Eye, FileText } from 'lucide-react';
 
 const Privacy = () => {
   return (

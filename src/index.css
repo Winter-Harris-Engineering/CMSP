@@ -21,6 +21,12 @@
   
   --color-tertiary: #00E639;
   --color-tertiary-foreground: #003907;
+  
+  --color-error: #FF453A;
+  --color-error-foreground: #3D0003;
+  
+  --color-warning: #FFD60A;
+  --color-warning-foreground: #3D3100;
 
   --color-surface: #131317;
   --color-surface-container-lowest: #0E0E12;

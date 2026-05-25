@@ -1,17 +1,11 @@
-import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { 
-  Play, 
   ArrowRight, 
-  Wand2, 
-  Terminal, 
-  Layers, 
   CheckCircle2, 
   Database, 
   CloudCheck,
-  ShieldCheck,
-  Zap
+  ShieldCheck
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -27,7 +21,7 @@ const MissionReadyRmf = () => {
               <span className="text-primary font-bold">Risk Management Framework</span>
             </h1>
             <p className="text-foreground/70 text-lg lg:text-xl max-w-xl leading-relaxed">
-              Security engineers shouldn't be buried in paperwork. We automate the RMF lifecycle so your elite talent can focus on high-impact technical security problems instead of manual documentation.
+              Security engineers shouldn't be buried in paperwork. We automate the RMF lifecycle so your security engineers can focus on high-impact technical security engineering instead of manual documentation.
             </p>
             <div className="flex flex-wrap gap-8">
               <Button 
@@ -37,39 +31,83 @@ const MissionReadyRmf = () => {
                 <Link to="/contact">Reach Out</Link>
               </Button>
               <Button 
+                asChild
                 variant="outline"
                 className="bg-surface-container-high border-l-2 border-primary px-8 py-6 rounded-lg font-headline font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors h-auto border-y-0 border-r-0"
               >
-                Deploy Local Instance
+                <Link to="/contact">Deploy Local Instance</Link>
               </Button>
             </div>
           </div>
           
           <div className="relative group">
-            <div className="absolute -inset-1 bg-primary/20 blur-2xl rounded-xl opacity-50"></div>
-            <div className="relative bg-surface-container-low rounded-xl aspect-video flex items-center justify-center border border-white/5 overflow-hidden">
-              <img 
-                alt="CMSP Interface Concept" 
-                className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUIdS1OgasPDWdqqIbNPMcq4Dh-Es90mtcWn_cqWvb88k4Rhdh3A_Bzata9WUzTWidW2V-xtUA9tFZJjoyEUYYzjKTWkYmFK7U_QwCCaKBvFmkNc7y1vcbx94pNz6cfGXpbhgtu-4cEEsIS3PMmZqkV3D7pPS7xvs-3nOcsnlp5szMXtcjjzFxt4RJFsEdP0uXCItbhYOghCMlIb3qL022rQNh0XJvivsPaU-qpE9E8YyPVVzlYiYY9MHZo6u3af_vRe4Y_S2Me6Q1" 
-              />
-              <div className="z-20 flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform cursor-pointer">
-                  <Play className="text-primary fill-primary w-10 h-10" />
-                </div>
-                <span className="mt-4 font-headline text-xs tracking-[0.2em] uppercase text-primary">System Walkthrough</span>
-              </div>
+            <div className="absolute -inset-1 bg-primary/20 blur-2xl rounded-lg opacity-50"></div>
+            <div className="relative bg-surface-container-low rounded-lg aspect-video flex items-center justify-center border border-white/5 overflow-hidden">
+              <svg className="absolute inset-0 w-full h-full opacity-75 group-hover:opacity-95 group-hover:scale-102 transition-all duration-700" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="grid-rmf" width="24" height="24" patternUnits="userSpaceOnUse">
+                    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(0, 218, 243, 0.05)" strokeWidth="1"/>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid-rmf)" />
+                
+                <circle cx="300" cy="170" r="140" stroke="rgba(0, 218, 243, 0.08)" strokeWidth="1" strokeDasharray="4 8" />
+                <circle cx="300" cy="170" r="90" stroke="rgba(0, 218, 243, 0.12)" strokeWidth="1.5" />
+                <circle cx="300" cy="170" r="40" stroke="rgba(0, 218, 243, 0.18)" strokeWidth="2" strokeDasharray="20 10" />
+
+                <line x1="300" y1="170" x2="430" y2="95" stroke="#00DAF3" strokeWidth="1.5" opacity="0.3" strokeDasharray="3 3"/>
+                <line x1="300" y1="170" x2="210" y2="220" stroke="#00E639" strokeWidth="1.5" opacity="0.3" />
+
+                <g transform="translate(300, 170)">
+                  <circle r="20" fill="#1B1B1F" stroke="#00DAF3" strokeWidth="2" />
+                  <path d="M -8 -8 L 8 8 M -8 8 L 8 -8" stroke="#00DAF3" strokeWidth="1.5" />
+                  <text y="36" textAnchor="middle" fill="#00DAF3" fontSize="12" fontFamily="monospace" fontWeight="bold" letterSpacing="1.5">CMSP CORE</text>
+                </g>
+
+                <g transform="translate(180, 100)">
+                  <circle r="16" fill="#131317" stroke="#00E639" strokeWidth="1.5" />
+                  <text textAnchor="middle" dominantBaseline="central" y="0" fill="#00E639" fontSize="12" fontFamily="monospace" fontWeight="bold">AC</text>
+                  <text textAnchor="middle" y="32" fill="#E4E1E7" fontSize="11" fontFamily="sans-serif" fontWeight="600" opacity="0.9">Access Control</text>
+                  <circle cx="10" cy="-10" r="4" fill="#00E639" />
+                </g>
+
+                <g transform="translate(420, 100)">
+                  <circle r="16" fill="#131317" stroke="#00E639" strokeWidth="1.5" />
+                  <text textAnchor="middle" dominantBaseline="central" y="0" fill="#00E639" fontSize="12" fontFamily="monospace" fontWeight="bold">AU</text>
+                  <text textAnchor="middle" y="32" fill="#E4E1E7" fontSize="11" fontFamily="sans-serif" fontWeight="600" opacity="0.9">Audit & Accountability</text>
+                  <circle cx="10" cy="-10" r="4" fill="#00E639" />
+                </g>
+
+                <g transform="translate(180, 240)">
+                  <circle r="16" fill="#131317" stroke="#FFD60A" strokeWidth="1.5" />
+                  <text textAnchor="middle" dominantBaseline="central" y="0" fill="#FFD60A" fontSize="12" fontFamily="monospace" fontWeight="bold">SC</text>
+                  <text textAnchor="middle" y="32" fill="#E4E1E7" fontSize="11" fontFamily="sans-serif" fontWeight="600" opacity="0.9">Boundary Protection</text>
+                  <circle cx="10" cy="-10" r="4" fill="#FFD60A" />
+                </g>
+
+                <g transform="translate(420, 240)">
+                  <circle r="16" fill="#131317" stroke="#FF453A" strokeWidth="1.5" />
+                  <text textAnchor="middle" dominantBaseline="central" y="0" fill="#FF453A" fontSize="12" fontFamily="monospace" fontWeight="bold">IA</text>
+                  <text textAnchor="middle" y="32" fill="#E4E1E7" fontSize="11" fontFamily="sans-serif" fontWeight="600" opacity="0.9">MFA Enforcement</text>
+                  <circle cx="10" cy="-10" r="4" fill="#FF453A" />
+                </g>
+
+                <path d="M 196 100 L 280 170" stroke="rgba(0, 230, 57, 0.4)" strokeWidth="1" strokeDasharray="3 3"/>
+                <path d="M 404 100 L 320 170" stroke="rgba(0, 230, 57, 0.4)" strokeWidth="1" strokeDasharray="3 3"/>
+                <path d="M 196 240 L 280 170" stroke="rgba(255, 214, 10, 0.4)" strokeWidth="1" />
+                <path d="M 404 240 L 320 170" stroke="rgba(255, 69, 58, 0.4)" strokeWidth="1" />
+              </svg>
             </div>
           </div>
         </div>
       </section>
 
       {/* Impact Stats */}
-      <section className="bg-surface-container-lowest py-16 px-8 border-y border-white/5">
+      <section className="bg-surface-container-lowest py-16 px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="text-center md:text-left">
-            <span className="font-headline text-primary text-sm tracking-widest uppercase mb-2 block">Performance Gain</span>
-            <h2 className="font-headline text-4xl font-bold">Accelerated Authority</h2>
+            <span className="font-headline text-primary text-sm tracking-widest uppercase mb-2 block">ATO Validation Velocity</span>
+            <h2 className="font-headline text-4xl font-bold">Optimized Compliance Timelines</h2>
           </div>
           <div className="flex items-center gap-8 lg:gap-16">
             <div className="flex flex-col items-center">
@@ -88,7 +126,7 @@ const MissionReadyRmf = () => {
       {/* Command the Lifecycle */}
       <section className="px-8 max-w-7xl mx-auto">
         <div className="mb-16">
-          <h2 className="font-headline text-3xl font-bold mb-4">Command the Lifecycle</h2>
+          <h2 className="font-headline text-3xl font-bold mb-4">Streamlined RMF Orchestration</h2>
           <div className="h-1 w-24 bg-primary"></div>
         </div>
         <div className="grid md:grid-cols-3 gap-1">
@@ -145,7 +183,7 @@ const MissionReadyRmf = () => {
               </div>
             </div>
             
-            <div className="lg:col-span-3 glass-panel p-8 rounded-xl border border-white/10 shadow-2xl">
+            <div className="lg:col-span-3 glass-panel p-8 rounded-lg border border-white/10 shadow-2xl">
               <div className="flex justify-between items-center mb-8 border-b border-white/5 pb-4">
                 <span className="font-headline text-xs uppercase tracking-widest font-bold text-primary">Compliance Outlook</span>
                 <span className="font-headline text-xs uppercase tracking-widest font-bold text-slate-500">Real-time Stream</span>
@@ -203,7 +241,7 @@ const MissionReadyRmf = () => {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="bg-surface-container-low p-12 rounded-xl border border-white/5 flex flex-col items-center text-center">
+          <Card className="bg-surface-container-low p-12 rounded-lg border border-white/5 flex flex-col items-center text-center">
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
               <Database className="text-primary w-8 h-8" />
             </div>
@@ -216,7 +254,7 @@ const MissionReadyRmf = () => {
             </Button>
           </Card>
 
-          <Card className="bg-surface-container-low p-12 rounded-xl border border-white/5 flex flex-col items-center text-center">
+          <Card className="bg-surface-container-low p-12 rounded-lg border border-white/5 flex flex-col items-center text-center">
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
               <CloudCheck className="text-primary w-8 h-8" />
             </div>
@@ -265,9 +303,9 @@ const MissionReadyRmf = () => {
       <section className="px-8 py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5 -skew-y-3 origin-right"></div>
         <div className="max-w-4xl mx-auto relative text-center space-y-8">
-          <h2 className="font-headline text-4xl font-bold">Ready to Automate Your ATO?</h2>
+          <h2 className="font-headline text-4xl font-bold">Ready to Streamline Your ATO?</h2>
           <p className="text-foreground/70 text-lg">
-            Join the elite mission teams using CMSP to maintain continuous compliance without the documentation fatigue.
+            Join the cybersecurity engineering teams using CMSP to maintain continuous compliance without the documentation fatigue.
           </p>
           <div className="flex justify-center">
             <Button asChild className="tactical-gradient px-10 py-8 rounded-lg font-headline font-bold uppercase tracking-widest text-primary-foreground hover:shadow-lg transition-all h-auto text-lg">

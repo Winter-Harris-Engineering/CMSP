@@ -1,17 +1,11 @@
-import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
-  TrendingUp, 
   CheckCircle2, 
   Activity, 
-  Terminal, 
   Cpu, 
   Zap, 
-  FileSearch,
-  ArrowRight, 
-  ShieldCheck,
   History,
   Gauge
 } from 'lucide-react';
@@ -24,15 +18,14 @@ import {
   Area, 
   XAxis, 
   YAxis, 
-  CartesianGrid, 
-  Tooltip 
+  CartesianGrid
 } from 'recharts';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { Link } from 'react-router-dom';
 const AICopilotMetricsUI = () => {
   return (
     <div className="relative group">
-      <div className="absolute -inset-1 bg-primary/20 blur-2xl rounded-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+      <div className="absolute -inset-1 bg-primary/20 blur-2xl rounded-lg opacity-40 group-hover:opacity-60 transition-opacity"></div>
       <Card className="relative bg-surface-container-low border-white/5 overflow-hidden backdrop-blur-sm">
         {/* Terminal Header */}
         <div className="flex items-center justify-between px-4 py-2 bg-surface-container-high border-b border-white/5">
@@ -41,7 +34,7 @@ const AICopilotMetricsUI = () => {
             <div className="w-2 h-2 rounded-full bg-yellow-500/40"></div>
             <div className="w-2 h-2 rounded-full bg-tertiary/40"></div>
           </div>
-          <div className="text-[9px] font-mono text-primary/60 uppercase tracking-[0.2em]">Neural_Metrics_Probe_v1.0</div>
+          <div className="text-[9px] font-mono text-primary/60 uppercase tracking-[0.2em]">Compliance_Metrics_Probe_v1.0</div>
           <Activity className="w-3 h-3 text-tertiary animate-pulse" />
         </div>
 
@@ -70,7 +63,7 @@ const AICopilotMetricsUI = () => {
              <div className="flex items-center gap-4 p-3 bg-surface-container rounded border border-white/5 group/item transition-colors hover:bg-surface-container-high">
                 <CheckCircle2 className="w-5 h-5 text-tertiary shrink-0" />
                 <div className="space-y-1">
-                   <div className="text-[10px] font-bold text-white uppercase tracking-wider">Neural language parsing</div>
+                   <div className="text-[10px] font-bold text-white uppercase tracking-wider">Automated semantic parsing</div>
                    <div className="h-1 w-32 bg-surface-container-highest rounded-full overflow-hidden">
                       <div className="h-full w-full tactical-gradient animate-in slide-in-from-left duration-1000"></div>
                    </div>
@@ -86,7 +79,7 @@ const AICopilotMetricsUI = () => {
                       <div className="h-full w-3/4 tactical-gradient animate-pulse"></div>
                    </div>
                 </div>
-                <Badge variant="outline" className="ml-auto border-primary/20 text-primary text-[8px] uppercase tracking-tighter">99.8% ACC</Badge>
+                <Badge variant="outline" className="ml-auto border-primary/20 text-primary text-[8px] uppercase tracking-tighter">99.8% Parse Precision</Badge>
              </div>
           </div>
 
@@ -162,11 +155,19 @@ const MissionMetrics = () => {
       <section className="relative h-[70vh] flex items-center px-8 lg:px-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div>
-          <img 
-            alt="Cyber security command center background" 
-            className="w-full h-full object-cover opacity-20" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw96DFrL7xvrJi86CCQ2nTPNvZmpN5dxsWUuBsLi5gDnv3LcXYEmGHIeHaMWWuH4ateULXy4MiXXFq79Yi_0wcX9myxF8wv5xPF_xRRDFgfp1Y0ruEdhQvu3Ash2YeQdMAreAlMF0e1E_B7WBH8PSEJPjdPuD3PgcjeI_2KnUxWcMrubX8lCAadjtByw8RSCiMm54N-bbrb5t-i8O_4YBBTvSIivQ1LmLJ9PUhQS5V8kL0qi5Z69v4NPVv235uBt2EWY7pqF99jBCe" 
-          />
+          <svg className="absolute inset-0 w-full h-full opacity-20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="geometric-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 218, 243, 0.08)" strokeWidth="0.8"/>
+                <circle cx="40" cy="0" r="1.5" fill="rgba(0, 218, 243, 0.25)"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#geometric-grid)" />
+            <path d="M-100,200 Q200,400 500,100 T1100,300" stroke="rgba(0, 218, 243, 0.1)" strokeWidth="2" strokeDasharray="5 10"/>
+            <path d="M-100,250 Q200,450 500,150 T1100,350" stroke="rgba(0, 230, 57, 0.06)" strokeWidth="1.5" />
+            <circle cx="300" cy="150" r="250" stroke="rgba(0, 218, 243, 0.05)" strokeWidth="1"/>
+            <circle cx="300" cy="150" r="150" stroke="rgba(0, 218, 243, 0.03)" strokeWidth="1" strokeDasharray="3 6"/>
+          </svg>
         </div>
         <div className="relative z-20 max-w-4xl space-y-6">
           <h1 className="font-headline text-6xl lg:text-8xl font-light tracking-tight leading-none">
@@ -174,7 +175,7 @@ const MissionMetrics = () => {
             <span className="font-bold text-primary">From Red to Mission-Ready</span>
           </h1>
           <p className="text-foreground/70 text-xl max-w-2xl leading-relaxed">
-            Decentralize decision-making with rapid-response mission metrics. Our automated engine transforms complex security postures into actionable authority in real-time.
+            Accelerate decision-making with rapid-response compliance metrics. Our automated system compiles complex security telemetry into actionable compliance reports in real-time.
           </p>
         </div>
       </section>
@@ -219,12 +220,12 @@ const MissionMetrics = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div className="space-y-10">
             <h2 className="font-headline text-5xl font-bold leading-tight">
-              Overnight Analysis of the <br/>
+              Continuous Compilation of the <br/>
               <span className="text-primary italic">Body of Evidence</span>
             </h2>
             <div className="space-y-8">
               <p className="text-foreground/70 text-lg leading-relaxed">
-                Uploading the complete Body of Evidence (BOE) initiates the CMSP tactical engine. While your team stands down, our system executes thousands of parallel control assessments across your entire documentation stack.
+                Uploading the complete Body of Evidence (BOE) initiates the CMSP automated core. Our system executes thousands of parallel control verification rules across your entire compliance documentation stack.
               </p>
               
               <div className="space-y-4">
@@ -232,7 +233,7 @@ const MissionMetrics = () => {
                   <CheckCircle2 className="text-tertiary w-8 h-8 shrink-0" />
                   <div className="space-y-1">
                     <div className="text-sm font-bold uppercase tracking-widest text-white">Automated Cross-Referencing</div>
-                    <p className="text-sm text-foreground/60 leading-relaxed">Validates policy vs. actual implementation artifacts using neural language parsing.</p>
+                    <p className="text-sm text-foreground/60 leading-relaxed">Validates policy vs. actual implementation evidence using automated semantic parsing.</p>
                   </div>
                 </div>
                 
@@ -240,7 +241,7 @@ const MissionMetrics = () => {
                   <Activity className="text-primary w-8 h-8 shrink-0" />
                   <div className="space-y-1">
                     <div className="text-sm font-bold uppercase tracking-widest text-white">Control Analysis</div>
-                    <p className="text-sm text-foreground/60 leading-relaxed">Executes comprehensive control gap analysis overnight with 99.8% precision.</p>
+                    <p className="text-sm text-foreground/60 leading-relaxed">Executes comprehensive control gap analysis with 99.8% verification precision.</p>
                   </div>
                 </div>
               </div>
@@ -358,8 +359,8 @@ const MissionMetrics = () => {
           </Card>
         </div>
 
-        {/* Velocity Area Chart */}
-        <Card className="bg-surface-container-lowest border-white/5 p-10 rounded-xl">
+         {/* Velocity Area Chart */}
+         <Card className="bg-surface-container-lowest border-white/5 p-10 rounded-lg">
            <div className="flex justify-between items-center mb-10">
               <div className="space-y-1">
                  <h4 className="font-headline text-2xl font-bold">Mission Velocity Stream</h4>
@@ -411,55 +412,54 @@ const MissionMetrics = () => {
         </Card>
       </section>
 
-      {/* Final Impact Section */}
-      <section className="px-8 lg:px-16 py-32 bg-primary-container/20 border-y border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-            <div className="space-y-4">
-              <div className="text-6xl font-headline font-bold text-primary tracking-tighter">7 Days</div>
-              <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-slate-400">Rapid System Improvement</div>
-              <p className="text-sm text-foreground/60 leading-relaxed px-4">
-                Accelerated Compliance Velocity achieving target postural shifts in a single 168-hour mission cycle.
-              </p>
-            </div>
-            
-            <div className="relative space-y-4">
-              <div className="hidden md:block absolute -left-8 top-1/2 -translate-y-1/2 h-20 border-l border-white/10"></div>
-              <div className="text-6xl font-headline font-bold text-primary tracking-tighter">12k+</div>
-              <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-slate-400">Documents Analyzed</div>
-              <p className="text-sm text-foreground/60 leading-relaxed px-4">
-                The full Body of Evidence processed with zero manual entry required.
-              </p>
-              <div className="hidden md:block absolute -right-8 top-1/2 -translate-y-1/2 h-20 border-l border-white/10"></div>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="text-6xl font-headline font-bold text-primary tracking-tighter">0%</div>
-              <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-slate-400">Human Error Rate</div>
-              <p className="text-sm text-foreground/60 leading-relaxed px-4">
-                Automated logic checks eliminate reviewer fatigue and subjective compliance drift.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+       {/* Final Impact Section */}
+       <section className="px-8 lg:px-16 py-32 bg-surface-container-low">
+         <div className="max-w-6xl mx-auto">
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+             <div className="space-y-4">
+               <div className="text-6xl font-headline font-bold text-primary tracking-tighter">7 Days</div>
+               <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-slate-400">Rapid System Improvement</div>
+               <p className="text-sm text-foreground/60 leading-relaxed px-4">
+                 Accelerated Compliance Velocity achieving target postural shifts in a single 168-hour mission cycle.
+               </p>
+             </div>
+             
+             <div className="relative space-y-4">
+               <div className="hidden md:block absolute -left-8 top-1/2 -translate-y-1/2 h-20 border-l border-white/10"></div>
+               <div className="text-6xl font-headline font-bold text-primary tracking-tighter">12k+</div>
+               <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-slate-400">Documents Parsed</div>
+               <p className="text-sm text-foreground/60 leading-relaxed px-4">
+                 The full Body of Evidence processed with zero manual entry required.
+               </p>
+               <div className="hidden md:block absolute -right-8 top-1/2 -translate-y-1/2 h-20 border-l border-white/10"></div>
+             </div>
+             
+             <div className="space-y-4">
+               <div className="text-6xl font-headline font-bold text-primary tracking-tighter">99.8%</div>
+               <div className="text-[11px] font-bold uppercase tracking-[0.4em] text-slate-400">Standardized Logic Precision</div>
+               <p className="text-sm text-foreground/60 leading-relaxed px-4">
+                 Automated logic checks eliminate reviewer fatigue and subjective compliance drift.
+               </p>
+             </div>
+           </div>
+         </div>
+       </section>
 
       {/* CTA Section - Shared with previous pages for consistency */}
-      <section className="px-8 lg:px-16 py-32">
-        <div className="relative overflow-hidden rounded-3xl p-20 text-center border border-white/5">
-          <div className="absolute inset-0 tactical-gradient opacity-10"></div>
-          <div className="relative z-10 space-y-10">
-            <h2 className="font-headline text-5xl font-light">Deploy Mission-Ready Metrics</h2>
-            <p className="text-foreground/70 max-w-2xl mx-auto text-xl leading-relaxed">
-              Transition from static checklists to continuous, automated mission assurance with high-fidelity visual telemetry.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Button asChild className="tactical-gradient px-12 py-8 rounded-xl text-primary-foreground font-headline font-bold text-sm uppercase tracking-widest shadow-2xl shadow-primary/30 active:scale-95 transition-all h-auto text-lg">
-                <Link to="/request-briefing">Request a Mission Briefing</Link>
-              </Button>
-            </div>
-          </div>
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+       <section className="px-8 lg:px-16 py-32">
+         <div className="relative overflow-hidden rounded-lg p-20 text-center border border-white/5">
+           <div className="absolute inset-0 tactical-gradient opacity-10"></div>
+           <div className="relative z-10 space-y-10">
+             <h2 className="font-headline text-5xl font-light">Deploy Mission-Ready Metrics</h2>
+             <p className="text-foreground/70 max-w-2xl mx-auto text-xl leading-relaxed">
+               Transition from static checklists to continuous, automated mission assurance with high-fidelity visual telemetry.
+             </p>
+             <div className="flex flex-col sm:flex-row justify-center gap-6">
+               <Button asChild className="tactical-gradient px-12 py-8 rounded-lg text-primary-foreground font-headline font-bold text-sm uppercase tracking-widest shadow-2xl shadow-primary/30 active:scale-95 transition-all h-auto text-lg">
+                 <Link to="/contact">Request a Mission Briefing</Link>
+               </Button>
+             </div>
+           </div><div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-tertiary/5 blur-[120px] rounded-full"></div>
         </div>
       </section>

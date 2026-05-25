@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,9 +11,7 @@ import {
   Settings, 
   Download,
   Terminal,
-  Search,
   Lock,
-  Zap,
   Activity
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -22,7 +19,7 @@ import { Link } from 'react-router-dom';
 const AICopilotUI = () => {
   return (
     <div className="relative group">
-      <div className="absolute -inset-1 bg-primary/20 blur-2xl rounded-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+      <div className="absolute -inset-1 bg-primary/20 blur-2xl rounded-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
       <Card className="relative bg-surface-container-low border-white/5 overflow-hidden">
         {/* Header / Terminal Bar */}
         <div className="flex items-center justify-between px-4 py-2 bg-surface-container-high border-b border-white/5">
@@ -31,7 +28,7 @@ const AICopilotUI = () => {
             <div className="w-2 h-2 rounded-full bg-yellow-500/50"></div>
             <div className="w-2 h-2 rounded-full bg-tertiary/50"></div>
           </div>
-          <div className="text-[10px] font-mono text-primary/70 uppercase tracking-widest">Neural_Engine_v4.2</div>
+          <div className="text-[10px] font-mono text-primary/70 uppercase tracking-widest">Semantic_Parsing_Engine_v4.2</div>
           <div className="flex items-center gap-2">
             <Activity className="w-3 h-3 text-tertiary animate-pulse" />
             <span className="text-[10px] font-mono text-tertiary uppercase">Active</span>
@@ -127,18 +124,20 @@ const ComplianceAssessment = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <h1 className="font-headline font-light text-6xl leading-tight tracking-tight">
-              Intelligent Compliance <br/><span className="text-primary font-bold">Management</span>
+              Precision Compliance <br/><span className="text-primary font-bold">Orchestration</span>
             </h1>
             <p className="text-foreground/70 text-lg max-w-xl leading-relaxed">
-              Automate the complete RMF lifecycle. From AI-driven document ingestion to intelligent remediation workflows, CMSP eliminates manual oversight and enforces mission-critical security standards.
+              Automate the complete RMF lifecycle. From automated document ingestion to structured remediation workflows, CMSP eliminates documentation bottlenecks and enforces mission-critical security standards.
             </p>
             <div className="flex gap-4">
-              <Button className="tactical-gradient px-8 py-6 rounded-lg text-primary-foreground font-headline font-bold text-sm uppercase tracking-widest flex items-center gap-2 active:scale-95 transition-all shadow-lg shadow-primary/20 h-auto">
-                Initialize Assessment
-                <Rocket className="w-4 h-4" />
+              <Button asChild className="tactical-gradient px-8 py-6 rounded-lg text-primary-foreground font-headline font-bold text-sm uppercase tracking-widest flex items-center gap-2 active:scale-95 transition-all shadow-lg shadow-primary/20 h-auto">
+                <Link to="/contact">
+                  Initialize Assessment
+                  <Rocket className="w-4 h-4" />
+                </Link>
               </Button>
-              <Button variant="outline" className="bg-surface-container-high border-white/10 px-8 py-6 rounded-lg text-foreground font-headline font-bold text-sm uppercase tracking-widest hover:bg-surface-container-highest transition-colors h-auto">
-                Technical Manual
+              <Button asChild variant="outline" className="bg-surface-container-high border-white/10 px-8 py-6 rounded-lg text-foreground font-headline font-bold text-sm uppercase tracking-widest hover:bg-surface-container-highest transition-colors h-auto">
+                <Link to="/contact">Request Technical Manual</Link>
               </Button>
             </div>
           </div>
@@ -175,18 +174,18 @@ const ComplianceAssessment = () => {
         </div>
       </section>
 
-      {/* Semantic Classification - Featuring the Custom AI Copilot */}
-      <section className="bg-surface-container-low py-24 px-8 border-y border-white/5 overflow-hidden">
+      {/* Semantic Classification - Featuring the Custom Automated Parser Engine */}
+      <section className="bg-surface-container-low py-24 px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto grid md:grid-cols-5 gap-16 items-center">
           <div className="md:col-span-2 space-y-6">
             <h2 className="font-headline font-light text-4xl">Semantic Document Classification</h2>
             <p className="text-foreground/70 leading-relaxed text-lg">
-              Our neural processing engine analyzes SSPs, SARs, and technical artifacts to automatically attribute unstructured evidence to the correct NIST 800-53 Control Families.
+              Our semantic processing core analyzes SSPs, SARs, and technical evidence to systematically attribute unstructured compliance evidence to the correct NIST 800-53 Control Families.
             </p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="text-primary w-5 h-5 shrink-0" />
-                <span className="text-sm font-medium">Neural mapping of technical artifacts to NIST controls</span>
+                <span className="text-sm font-medium">Systematic mapping of technical evidence to NIST controls</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="text-primary w-5 h-5 shrink-0" />
@@ -242,8 +241,8 @@ const ComplianceAssessment = () => {
                 </div>
               ))}
             </div>
-            <Button variant="ghost" className="w-full mt-6 py-6 border border-primary/20 rounded hover:border-primary/50 text-xs font-bold uppercase tracking-widest transition-colors hover:bg-primary/5 h-auto">
-              Apply Scoping Filter
+            <Button disabled variant="ghost" className="w-full mt-6 py-6 border border-primary/20 rounded text-xs font-bold uppercase tracking-widest cursor-not-allowed opacity-50 h-auto">
+              Apply Scoping Filter (Illustrative Only)
             </Button>
           </Card>
 
@@ -255,16 +254,16 @@ const ComplianceAssessment = () => {
                 <p className="text-xs text-foreground/70 leading-relaxed">
                   Comprehensive sweep of all high-impact control families including technical, operational, and management overlays.
                 </p>
-                <button className="text-xs font-black uppercase text-primary flex items-center gap-1 hover:gap-2 transition-all group">
-                  Execute Run <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                <button disabled className="text-xs font-bold uppercase text-primary/60 flex items-center gap-1 cursor-not-allowed opacity-70">
+                  Execute Run <ArrowRight className="w-3 h-3" />
                 </button>
               </Card>
-              <Card className="bg-surface-container-low p-6 border-white/5 hover:border-primary/20 transition-all cursor-pointer space-y-4">
+              <Card className="bg-surface-container-low p-6 border-white/5 space-y-4">
                 <h4 className="text-foreground font-headline text-lg font-bold">Targeted Spot Checks</h4>
                 <p className="text-xs text-foreground/70 leading-relaxed">
                   Run surgical scans on specific control identifiers or families based on recent system modifications.
                 </p>
-                <button className="text-xs font-black uppercase text-slate-400 flex items-center gap-1">
+                <button disabled className="text-xs font-bold uppercase text-slate-500 flex items-center gap-1 cursor-not-allowed opacity-70">
                   Configure Check <Settings className="w-3 h-3" />
                 </button>
               </Card>
@@ -312,7 +311,7 @@ const ComplianceAssessment = () => {
       </section>
 
       {/* Automated POA&M Generation */}
-      <section className="bg-surface-container-low py-24 px-8 border-y border-white/5">
+      <section className="bg-surface-container-low py-24 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
             <div className="space-y-4">
@@ -321,7 +320,7 @@ const ComplianceAssessment = () => {
                 CMSP dynamically clusters non-compliant controls into prioritized Plans of Action and Milestones, optimizing your remediation workflow.
               </p>
             </div>
-            <Button className="tactical-gradient px-8 py-6 rounded text-primary-foreground font-bold text-xs uppercase tracking-widest shadow-lg shadow-primary/10 h-auto">
+            <Button disabled className="tactical-gradient px-8 py-6 rounded text-primary-foreground font-bold text-xs uppercase tracking-widest opacity-50 cursor-not-allowed h-auto">
               Export POAM.xlsx <Download className="w-4 h-4 ml-2" />
             </Button>
           </div>
@@ -352,7 +351,7 @@ const ComplianceAssessment = () => {
                     <div className={`text-sm font-medium ${poam.type === 'error' ? 'text-error' : 'text-tertiary'}`}>{poam.date}</div>
                   </div>
                   <div className="col-span-2 md:col-span-1 flex items-center">
-                    <Button variant="outline" className="text-[10px] font-black uppercase text-primary border-primary/20 px-4 py-2 hover:bg-primary/5 transition-colors w-full h-auto">View Guidance</Button>
+                    <Button disabled variant="outline" className="text-[10px] font-black uppercase text-primary border-primary/20 px-4 py-2 opacity-50 cursor-not-allowed w-full h-auto">View Guidance</Button>
                   </div>
                 </div>
               </Card>
@@ -363,7 +362,7 @@ const ComplianceAssessment = () => {
 
       {/* CTA Section */}
       <section className="px-8 max-w-7xl mx-auto pb-12">
-        <div className="relative overflow-hidden rounded-3xl p-16 text-center border border-white/5">
+        <div className="relative overflow-hidden rounded-lg p-16 text-center border border-white/5">
           <div className="absolute inset-0 tactical-gradient opacity-10"></div>
           <div className="relative z-10 space-y-8">
             <h2 className="font-headline font-light text-5xl">Ready for Zero-Trust Compliance?</h2>
@@ -371,11 +370,11 @@ const ComplianceAssessment = () => {
               Transition from static checklists to continuous, automated mission assurance with the Cyber Mission Support Platform.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button className="tactical-gradient px-10 py-6 rounded-xl text-primary-foreground font-bold text-sm uppercase tracking-widest shadow-xl shadow-primary/30 active:scale-95 transition-transform h-auto">
-                Start Your Assessment
+              <Button asChild className="tactical-gradient px-10 py-6 rounded-lg text-primary-foreground font-bold text-sm uppercase tracking-widest shadow-xl shadow-primary/30 active:scale-95 transition-transform h-auto">
+                <Link to="/contact">Start Your Assessment</Link>
               </Button>
-              <Button variant="outline" className="bg-surface-container-highest px-10 py-6 rounded-xl text-foreground font-bold text-sm uppercase tracking-widest hover:bg-surface-bright transition-colors border-white/10 active:scale-95 transition-transform h-auto">
-                Request a Demo
+              <Button asChild variant="outline" className="bg-surface-container-highest px-10 py-6 rounded-lg text-foreground font-bold text-sm uppercase tracking-widest hover:bg-surface-bright transition-colors border-white/10 active:scale-95 transition-transform h-auto">
+                <Link to="/contact">Request a Demo</Link>
               </Button>
             </div>
           </div>
